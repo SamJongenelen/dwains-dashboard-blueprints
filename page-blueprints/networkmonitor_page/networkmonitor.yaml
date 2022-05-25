@@ -28,27 +28,53 @@ blueprint:
       name: WAN ip
       description: WAN IP
       type: entity-picker
+    
+    04_wan_rx:
+      name: WAN ip
+      description: WAN IP
+      type: entity-picker
 
-    11_network_cpu:
+    05_wan_tx:
+      name: WAN ip
+      description: WAN IP
+      type: entity-picker
+
+    11_firewall_cpu:
       name: CPU usage
-      description: CPU usage of the network device
+      description: CPU usage of the firewall
       type: entity-picker
 
-    12_network_memory:
-      name: Memory usage
-      description: Memory usage of the network device
+    12_firewall_memory:
+      name: firewall usage
+      description: Memory usage of the firewall
       type: entity-picker
 
-    13_network_disk:
-      name: Disk usage
-      description: Disk usage of the network device
-      type: entity-picker
 
-      
-    13_network_temperature:
-      name: Rotuer temperature
+    13_firewall_temperature:
+      name: firewall  temperature
       description: Router temperature
       type: entity-picker
+
+    14_firewall_disk:
+      name: firewall usage
+      description: Disk usage of the firewall
+      type: entity-picker
+
+    15_firewall_disk:
+      name: Nr of connected clients
+      description: Nr of connected clients
+      type: entity-picker
+
+    21_adblocker_enabled:
+      name: Adblocker enabled
+      description: Adblocker enabled
+      type: entity-picker
+     
+    22_adblocker_processing_speed:
+      name: Adblocker performance
+      description: Adblocker avg processing speed
+      type: entity-picker
+     
    
 card:
   cards:
@@ -165,11 +191,11 @@ card:
                 text-align: left
               columns: 2
               entities:
-                - entity: $11_network_cpu$
-                - entity: $12_network_memory$
-                - entity: $13_network_temperature$
+                - entity: $11_firewall_cpu$
+                - entity: $12_firewall_memory$
+                - entity: $13_firewall_temperature$
                   icon: mdi:thermometer
-                - entity: $14_network_disk$
+                - entity: $14_firewall_disk$
               positions:
                 indicator: inside
                 name: 'off'
